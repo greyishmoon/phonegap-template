@@ -15,8 +15,24 @@
 
 <body>
   
-  	<h1>Heading3</h1>
-	<div id="linked">Placeholder</div>
+	<!-- Example JQuery Mobile page structure (with fixed header/footer)   -->
+  	<div data-role="page" id="pageone" data-position="fixed">
+		<div data-role="header">
+			<h1>Page 1</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<p>Welcome! Use the links below to navigate to the other pages!</p>
+			<!-- Example link text to js file   -->
+			<div id="linked">Placeholder</div>
+			<!-- Example link to another page (not present in template)   -->
+			<a href="#pagetwo">Go to Page Two</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h1>Footer Text</h1>
+		</div>
+    </div> 
 
 </body>
 </html>
