@@ -1,17 +1,16 @@
 //----------- CORDOVA ONLOAD ---------------- //
 // Cordova device event listener - will not work in browser
-document.addEventListener("deviceready", initialize, false);
+// document.addEventListener("deviceready", initialise, false);
 
 //----------- HTML ONLOAD ---------------- //
 // JQuery ready event listener
-$(document).ready(initialize); // or... $(window).on( "load", readyFn );
+// $(document).ready(initialise);         // or... $(window).on( "load", readyFn );
 
 //----------- JQM ONLOAD ---------------- //
 // JQuery Mobile pageloaded event listener
-$(document).on('pageshow', '#pageone', initialize);
+$(document).on('pageshow', '#pageone', initialise);
 
-
-function initialize() {
+function initialise() {
     // EVENT LISTENERS HERE
 
     // DEMO
