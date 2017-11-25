@@ -1,39 +1,40 @@
 //----------- CORDOVA ONLOAD ---------------- //
-
 // Cordova device event listener - will not work in browser
 document.addEventListener("deviceready", onDeviceReady, false);
 
-// Cordova device event triggered function
 function onDeviceReady() {
-
-    // Add other event listeners here if needed (pause, resume, backbutton etc)
-
-    // updates display    
-    // updateDisplay();
-
-    console.log("device ready");
+    console.log("Cordova onDeviceReady");
+    initialize();
 }
 
-//----------- CORDOVA ONLOAD ---------------- //
-
 //----------- HTML ONLOAD ---------------- //
-
 // JQuery ready event listener
-$(document).ready(onReady);
-// or... $( window ).on( "load", readyFn );
+$(document).ready(onReady);         // or... $(window).on( "load", readyFn );
 
-// JQuery DOM loaded event triggered function
 function onReady(jQuery) {
-    // MAIN CODE HERE
-    console.log("onReady");
-
-    updateDisplay();
+    console.log("jQuery onReady");
+    initialize();
 }
 
-//----------- HTML ONLOAD ---------------- //
+//----------- JQM ONLOAD ---------------- //
+// JQuery Mobile pageloaded event listener
+$(document).on('pageshow', '#pageone', onLoad);
 
+function onLoad() {
+    console.log("jQuery Mobile onLoad");
+    initialize();
+}
 
-// USE FOR ALL DISPLAY CODE
-function updateDisplay() {
-    $("#linked").text("Text replaced by updateDisplay");
+function initialize() {
+    console.log("initialize");
+    // EVENT LISTENERS HERE
+
+    // DEMO
+    //set up click event handling for button
+    $('#linkedButton').on("click", updateText);
+    $("#linkedText").text("Text replaced by initialize");
+}
+
+function updateText() {
+    $("#linkedText").text("Text NOW replaced by BUTTON");
 }
